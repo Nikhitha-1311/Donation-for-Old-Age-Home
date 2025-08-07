@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donations for Old Age Home</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Old Age Care Home</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Welcome to Our Old Age Care Home Donation Portal</h2>
+    <p>Your support brings smiles to the elderly.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>
+      Our Old Age Care Home is a non-profit initiative committed to offering a safe, caring, and supportive environment for senior citizens who have been neglected, abandoned, or left without support. We provide not only food and shelter but also companionship and emotional care.
+    </p>
+    <p>
+      Our goal is to ensure that every elderly person lives a life of dignity and comfort. With trained caregivers, medical support, and community activities, we aim to build a place where they feel respected and loved.
+    </p>
+    <p>
+      Your support helps us expand our services, accommodate more elderly residents, and provide better health and living standards for them.
+    </p>
+  </section>
+
+  <section id="workflow" class="section">
+    <h2>Workflow</h2>
+    <div class="workflow-gallery">
+      <div class="workflow-item" onclick="openModal(0)">
+        <div class="workflow-icon">💝</div>
+        <h3>Step 1: Donate</h3>
+        <p>You contribute any amount of your choice via our donation form.</p>
+      </div>
+      
+      <div class="workflow-item" onclick="openModal(1)">
+        <div class="workflow-icon">📊</div>
+        <h3>Step 2: Fund Allocation</h3>
+        <p>Donations are reviewed and transparently allocated to specific needs.</p>
+      </div>
+      
+      <div class="workflow-item" onclick="openModal(2)">
+        <div class="workflow-icon">🏗️</div>
+        <h3>Step 3: Implementation</h3>
+        <p>Our team uses funds to directly improve quality of life for residents.</p>
+      </div>
+      
+      <div class="workflow-item" onclick="openModal(3)">
+        <div class="workflow-icon">🔍</div>
+        <h3>Step 4: Monitoring</h3>
+        <p>Regular assessments ensure funds are used effectively.</p>
+      </div>
+      
+      <div class="workflow-item" onclick="openModal(4)">
+        <div class="workflow-icon">📈</div>
+        <h3>Step 5: Reporting</h3>
+        <p>We share updates and impact stories with our donors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for workflow steps -->
+  <div id="workflowModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-text">
+        <h2 id="modalTitle"></h2>
+        <div id="modalDescription"></div>
+        <div id="modalDetails"></div>
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <section id="donate" class="section">
+    <h2>Donate</h2>
+    <form id="donationForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      
+      <label for="amount">Donation Amount (INR):</label>
+      <input type="number" id="amount" min="1" required />
+      
+      <label for="message">Message (Optional):</label>
+      <textarea id="message" rows="3" placeholder="Leave a message for the elderly..."></textarea>
+      
+      <div id="card-element">
+        <!-- Stripe Elements will create form elements here -->
+      </div>
+      
+      <button type="submit" id="submit-button">
+        <span id="button-text">Donate Now</span>
+        <span id="loading-spinner" style="display: none;">Processing...</span>
+      </button>
+    </form>
+    <p id="donationMessage"></p>
+    <div id="payment-result" style="display: none;"></div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: support@oldagehome.org</p>
+    <p>Phone: +91-9876543210</p>
+    <p>Address: 123 Peace Street, Tirupati, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Old Age Home. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
